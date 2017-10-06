@@ -1,0 +1,62 @@
+resource_registry:
+  OS::TripleO::Compute::Net::SoftwareConfig: nic-configs/compute.yaml
+  OS::TripleO::Controller::Net::SoftwareConfig: nic-configs/controller.yaml
+  OS::TripleO::NodeUserData: first-boot.yaml
+  OS::TripleO::NodeExtraConfigPost: post-install.yaml
+
+parameter_defaults:
+  ControlPlaneDefaultRoute: "172.16.0.1"
+  ControlPlaneSubnetCidr: "24"
+  DnsServers: ['8.8.8.8','8.8.4.4']
+  EC2MetadataIp: "172.16.0.1"
+
+  ExternalAllocationPools: [{'start': '10.9.88.200', 'end': '10.9.88.210'}]
+  ExternalNetCidr: "10.9.88.0/24"
+  #ExternalNetworkVlanID: 10
+  NeutronExternalNetworkBridge: "''"
+  ExternalInterfaceDefaultRoute: "10.9.88.254"
+
+  InternalApiNetCidr: 10.10.81.0/24
+  StorageNetCidr: 10.10.82.0/24
+  StorageMgmtNetCidr: 10.10.83.0/24
+  TenantNetCidr: 10.10.84.0/24
+  InternalApiNetworkVlanID: 131
+  StorageNetworkVlanID: 132
+  StorageMgmtNetworkVlanID: 133
+  TenantNetworkVlanID: 134
+  InternalApiAllocationPools: [{'start': '10.10.81.10', 'end': '10.10.81.200'}]
+  StorageAllocationPools: [{'start': '10.10.82.10', 'end': '10.10.82.200'}]
+  StorageMgmtAllocationPools: [{'start': '10.10.83.10', 'end': '10.10.83.200'}]
+  TenantAllocationPools: [{'start': '10.10.84.10', 'end': '10.10.84.200'}]
+
+  ControllerCount: 1
+  ComputeCount: 1
+  NeutronMechanismDrivers: "openvswitch,sriovnicswitch"
+  NeutronPhysicalDevMappings: "sriov1:p1p1,sriov2:p1p2"
+  NeutronSriovNumVFs: "p1p1:10,p1p2:10"
+  NovaPCIPassthrough:
+    - devname: "p1p1"
+      physical_network: "sriov1"
+    - devname: "p1p2"
+      physical_network: "sriov2"
+  # NeutronBridgeMappings translates to neutron::agents::ml2::ovs::bridge_mappings
+  NeutronBridgeMappings: "datacentre:br-ex,sriov1:br-sriov1,sriov2:br-sriov2"
+  # NeutronFlatNetworks translates to neutron::plugins::ml2::flat_networks
+  NeutronFlatNetworks: "datacentre"
+  # NeutronNetworkVLANRanges translates to neutron::plugins::ml2::network_vlan_ranges
+  NeutronNetworkVLANRanges: "sriov1:210:214,sriov2:231:235"
+  # NeutronNetworkType translates to neutron::plugins::ml2::tenant_network_types
+  NeutronNetworkType: ['vlan']
+  # NeutronTunnelTypes translates to neutron::agents::ml2::ovs::tunnel_types
+  NeutronTunnelTypes: ""
+
+  NovaReservedHostMemory: 4096
+  NovaSchedulerDefaultFilters: ['AvailabilityZoneFilter','RamFilter','ComputeFilter','ComputeCapabilitiesFilter','ImagePropertiesFilter','ServerGroupAntiAffinityFilter','ServerGroupAffinityFilter','PciPassthroughFilter']
+  ComputeKernelArgs: "intel_iommu=on default_hugepagesz=1GB hugepagesz=1G hugepages=64"
+
+  HostCpusList: "'0,1,2,3,4,5,6,7,8,9'"
+  NovaVcpuPinSet: ['12-21','24-87']
+
+  # TODO: Check if this configuration can be avoided
+  # HostIsolatedCoreList = NeutronDpdkCoreList + NovaVcpuPinSet
+  HostIsolatedCoreList: "10-87"
