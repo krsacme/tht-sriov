@@ -1,0 +1,35 @@
+{
+    "nodes":[
+        {
+            "mac":[
+                "a0:36:9f:eb:d5:74"
+            ],
+            "name":"compute-0",
+            "cpu":"48",
+            "memory":"12800",
+            "disk":"200",
+            "arch":"x86_64",
+            "pm_type":"pxe_ipmitool",
+            "pm_user":"root",
+            "pm_password":"calvin",
+            "pm_addr":"10.9.87.41",
+            "capabilities": "profile:compute,boot_option:local"
+        },
+        {
+            "mac":[
+                "a0:36:9f:eb:d5:9c"
+            ],
+            "name":"control-0",
+            "cpu":"48",
+            "memory":"12800",
+            "disk":"200",
+            "arch":"x86_64",
+            "pm_type":"pxe_ipmitool",
+            "pm_user":"root",
+            "pm_password":"calvin",
+            "pm_addr":"10.9.87.42",
+            "capabilities": "profile:control,boot_option:local"
+        }
+    ]
+}
+

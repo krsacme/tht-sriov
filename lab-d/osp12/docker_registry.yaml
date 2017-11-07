@@ -1,0 +1,65 @@
+# Generated with the following on 2017-11-07T00:42:22.636972
+#
+#   openstack overcloud container image prepare --namespace docker-registry.engineering.redhat.com/rhosp12 --prefix openstack- --suffix docker --tag=20171004.1 --service-environment-file /usr/share/openstack-tripleo-heat-templates/environments/docker.yaml --env-file docker_registry.yaml
+#
+
+parameter_defaults:
+  DockerAodhApiImage: docker-registry.engineering.redhat.com/rhosp12/openstack-aodh-api-docker:20171004.1
+  DockerAodhConfigImage: docker-registry.engineering.redhat.com/rhosp12/openstack-aodh-api-docker:20171004.1
+  DockerAodhEvaluatorImage: docker-registry.engineering.redhat.com/rhosp12/openstack-aodh-evaluator-docker:20171004.1
+  DockerAodhListenerImage: docker-registry.engineering.redhat.com/rhosp12/openstack-aodh-listener-docker:20171004.1
+  DockerAodhNotifierImage: docker-registry.engineering.redhat.com/rhosp12/openstack-aodh-notifier-docker:20171004.1
+  DockerCeilometerCentralImage: docker-registry.engineering.redhat.com/rhosp12/openstack-ceilometer-central-docker:20171004.1
+  DockerCeilometerComputeImage: docker-registry.engineering.redhat.com/rhosp12/openstack-ceilometer-compute-docker:20171004.1
+  DockerCeilometerConfigImage: docker-registry.engineering.redhat.com/rhosp12/openstack-ceilometer-central-docker:20171004.1
+  DockerCeilometerNotificationImage: docker-registry.engineering.redhat.com/rhosp12/openstack-ceilometer-notification-docker:20171004.1
+  DockerClustercheckConfigImage: docker-registry.engineering.redhat.com/rhosp12/openstack-mariadb-docker:20171004.1
+  DockerClustercheckImage: docker-registry.engineering.redhat.com/rhosp12/openstack-mariadb-docker:20171004.1
+  DockerCrondConfigImage: docker-registry.engineering.redhat.com/rhosp12/openstack-cron-docker:20171004.1
+  DockerCrondImage: docker-registry.engineering.redhat.com/rhosp12/openstack-cron-docker:20171004.1
+  DockerGlanceApiConfigImage: docker-registry.engineering.redhat.com/rhosp12/openstack-glance-api-docker:20171004.1
+  DockerGlanceApiImage: docker-registry.engineering.redhat.com/rhosp12/openstack-glance-api-docker:20171004.1
+  DockerGnocchiApiImage: docker-registry.engineering.redhat.com/rhosp12/openstack-gnocchi-api-docker:20171004.1
+  DockerGnocchiConfigImage: docker-registry.engineering.redhat.com/rhosp12/openstack-gnocchi-api-docker:20171004.1
+  DockerGnocchiMetricdImage: docker-registry.engineering.redhat.com/rhosp12/openstack-gnocchi-metricd-docker:20171004.1
+  DockerGnocchiStatsdImage: docker-registry.engineering.redhat.com/rhosp12/openstack-gnocchi-statsd-docker:20171004.1
+  DockerHAProxyConfigImage: docker-registry.engineering.redhat.com/rhosp12/openstack-haproxy-docker:20171004.1
+  DockerHAProxyImage: docker-registry.engineering.redhat.com/rhosp12/openstack-haproxy-docker:20171004.1
+  DockerHeatApiCfnConfigImage: docker-registry.engineering.redhat.com/rhosp12/openstack-heat-api-cfn-docker:20171004.1
+  DockerHeatApiCfnImage: docker-registry.engineering.redhat.com/rhosp12/openstack-heat-api-cfn-docker:20171004.1
+  DockerHeatApiConfigImage: docker-registry.engineering.redhat.com/rhosp12/openstack-heat-api-docker:20171004.1
+  DockerHeatApiImage: docker-registry.engineering.redhat.com/rhosp12/openstack-heat-api-docker:20171004.1
+  DockerHeatConfigImage: docker-registry.engineering.redhat.com/rhosp12/openstack-heat-api-docker:20171004.1
+  DockerHeatEngineImage: docker-registry.engineering.redhat.com/rhosp12/openstack-heat-engine-docker:20171004.1
+  DockerHorizonConfigImage: docker-registry.engineering.redhat.com/rhosp12/openstack-horizon-docker:20171004.1
+  DockerHorizonImage: docker-registry.engineering.redhat.com/rhosp12/openstack-horizon-docker:20171004.1
+  DockerKeystoneConfigImage: docker-registry.engineering.redhat.com/rhosp12/openstack-keystone-docker:20171004.1
+  DockerKeystoneImage: docker-registry.engineering.redhat.com/rhosp12/openstack-keystone-docker:20171004.1
+  DockerMemcachedConfigImage: docker-registry.engineering.redhat.com/rhosp12/openstack-memcached-docker:20171004.1
+  DockerMemcachedImage: docker-registry.engineering.redhat.com/rhosp12/openstack-memcached-docker:20171004.1
+  DockerMysqlClientConfigImage: docker-registry.engineering.redhat.com/rhosp12/openstack-mariadb-docker:20171004.1
+  DockerMysqlConfigImage: docker-registry.engineering.redhat.com/rhosp12/openstack-mariadb-docker:20171004.1
+  DockerMysqlImage: docker-registry.engineering.redhat.com/rhosp12/openstack-mariadb-docker:20171004.1
+  DockerNovaApiImage: docker-registry.engineering.redhat.com/rhosp12/openstack-nova-api-docker:20171004.1
+  DockerNovaComputeImage: docker-registry.engineering.redhat.com/rhosp12/openstack-nova-compute-docker:20171004.1
+  DockerNovaConductorImage: docker-registry.engineering.redhat.com/rhosp12/openstack-nova-conductor-docker:20171004.1
+  DockerNovaConfigImage: docker-registry.engineering.redhat.com/rhosp12/openstack-nova-api-docker:20171004.1
+  DockerNovaConsoleauthImage: docker-registry.engineering.redhat.com/rhosp12/openstack-nova-consoleauth-docker:20171004.1
+  DockerNovaLibvirtConfigImage: docker-registry.engineering.redhat.com/rhosp12/openstack-nova-compute-docker:20171004.1
+  DockerNovaLibvirtImage: docker-registry.engineering.redhat.com/rhosp12/openstack-nova-libvirt-docker:20171004.1
+  DockerNovaMetadataImage: docker-registry.engineering.redhat.com/rhosp12/openstack-nova-api-docker:20171004.1
+  DockerNovaPlacementConfigImage: docker-registry.engineering.redhat.com/rhosp12/openstack-nova-placement-api-docker:20171004.1
+  DockerNovaPlacementImage: docker-registry.engineering.redhat.com/rhosp12/openstack-nova-placement-api-docker:20171004.1
+  DockerNovaSchedulerImage: docker-registry.engineering.redhat.com/rhosp12/openstack-nova-scheduler-docker:20171004.1
+  DockerNovaVncProxyImage: docker-registry.engineering.redhat.com/rhosp12/openstack-nova-novncproxy-docker:20171004.1
+  DockerPankoApiImage: docker-registry.engineering.redhat.com/rhosp12/openstack-panko-api-docker:20171004.1
+  DockerPankoConfigImage: docker-registry.engineering.redhat.com/rhosp12/openstack-panko-api-docker:20171004.1
+  DockerRabbitmqConfigImage: docker-registry.engineering.redhat.com/rhosp12/openstack-rabbitmq-docker:20171004.1
+  DockerRabbitmqImage: docker-registry.engineering.redhat.com/rhosp12/openstack-rabbitmq-docker:20171004.1
+  DockerRedisConfigImage: docker-registry.engineering.redhat.com/rhosp12/openstack-redis-docker:20171004.1
+  DockerRedisImage: docker-registry.engineering.redhat.com/rhosp12/openstack-redis-docker:20171004.1
+  DockerSwiftAccountImage: docker-registry.engineering.redhat.com/rhosp12/openstack-swift-account-docker:20171004.1
+  DockerSwiftConfigImage: docker-registry.engineering.redhat.com/rhosp12/openstack-swift-proxy-server-docker:20171004.1
+  DockerSwiftContainerImage: docker-registry.engineering.redhat.com/rhosp12/openstack-swift-container-docker:20171004.1
+  DockerSwiftObjectImage: docker-registry.engineering.redhat.com/rhosp12/openstack-swift-object-docker:20171004.1
+  DockerSwiftProxyImage: docker-registry.engineering.redhat.com/rhosp12/openstack-swift-proxy-server-docker:20171004.1

@@ -1,0 +1,17 @@
+parameter_defaults:
+  ControllerCount: 1
+  ComputeSriovCount: 1
+  OvercloudControllerFlavor: control
+  OvercloudComputeSriovFlavor: compute
+
+  #TODO: br-ex needs to be re-looked as nfv ref nic configs does not have br-ex bridge
+
+  # NeutronBridgeMappings translates to neutron::agents::ml2::ovs::bridge_mappings
+  NeutronBridgeMappings: "datacentre:br-ex"
+  # NeutronFlatNetworks translates to neutron::plugins::ml2::flat_networks
+  NeutronFlatNetworks: "datacentre"
+  # NeutronNetworkType translates to neutron::plugins::ml2::tenant_network_types
+  NeutronNetworkType: ['vlan']
+  # NeutronTunnelTypes translates to neutron::agents::ml2::ovs::tunnel_types
+  NeutronTunnelTypes: ""
+

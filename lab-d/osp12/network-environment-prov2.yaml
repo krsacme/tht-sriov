@@ -1,0 +1,34 @@
+parameter_defaults:
+  ControlPlaneDefaultRoute: "172.18.0.1"
+  ControlPlaneSubnetCidr: "24"
+  DnsServers: ['10.11.5.19', '8.8.8.8','8.8.4.4']
+  EC2MetadataIp: "172.18.0.1"
+
+  ExternalAllocationPools: [{'start': '10.9.88.211', 'end': '10.9.88.220'}]
+  ExternalNetCidr: "10.9.88.0/24"
+  #ExternalNetworkVlanID: 10
+  NeutronExternalNetworkBridge: "''"
+  ExternalInterfaceDefaultRoute: "10.9.88.254"
+
+  InternalApiNetCidr: 10.10.81.0/24
+  StorageNetCidr: 10.10.82.0/24
+  StorageMgmtNetCidr: 10.10.83.0/24
+  TenantNetCidr: 10.10.84.0/24
+  InternalApiNetworkVlanID: 131
+  StorageNetworkVlanID: 132
+  StorageMgmtNetworkVlanID: 133
+  TenantNetworkVlanID: 134
+  InternalApiAllocationPools: [{'start': '10.10.81.20', 'end': '10.10.81.200'}]
+  StorageAllocationPools: [{'start': '10.10.82.20', 'end': '10.10.82.200'}]
+  StorageMgmtAllocationPools: [{'start': '10.10.83.20', 'end': '10.10.83.200'}]
+  TenantAllocationPools: [{'start': '10.10.84.20', 'end': '10.10.84.200'}]
+
+  LocalProvisioningNicName: p5p2
+
+  NovaPCIPassthrough:
+    - devname: "p1p1"
+      physical_network: "tenant"
+  NeutronSupportedPCIVendorDevs: ['8086:154d', '8086:10ed', '8086:10fb']
+  NeutronPhysicalDevMappings: "tenant:p1p1"
+  NeutronSriovNumVFs: "p1p1:5"
+
